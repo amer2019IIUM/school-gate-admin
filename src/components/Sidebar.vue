@@ -20,7 +20,8 @@
           :to="{ name: route }"
         >
           <v-list-item-icon>
-            <v-icon style="color:teal">{{ icon }} </v-icon>
+            <font-awesome-icon :icon="icon" style="color:teal">
+            </font-awesome-icon>
           </v-list-item-icon>
 
           <span style="color:teal"> {{ text }} </span>
@@ -38,12 +39,12 @@ export default {
     return {
       isSelectedChild: this.$props.drawer,
       links: [
-        ["mdi-home", "الصفحة الرئيسية", "dashboard"],
-        ["mdi-sd", "الطلاب", "student-page"],
-        ["mdi-s", "المعلمين", "teacher-page"],
-        ["mdi-f", "المدارس", "school-page"],
-        ["mdi-g", "المراكز", "center-page"],
-        ["mdi-h", "الفصول", "grade-page"],
+        ["home", "الصفحة الرئيسية", "dashboard"],
+        ["user-graduate", "الطلاب", "student-page"],
+        ["chalkboard-teacher", "المعلمين", "teacher-page"],
+        ["school", "المدارس", "school-page"],
+        ["building", "المراكز", "center-page"],
+        ["door-open", "الفصول", "grade-page"],
       ],
     };
   },

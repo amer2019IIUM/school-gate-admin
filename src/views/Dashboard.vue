@@ -20,7 +20,6 @@
               <v-card-text class="d-flex justify-space-between align-center">
                 <div>
                   <strong>{{ item.title }}</strong> <br />
-                  <span>Last 3 weeks</span>
                 </div>
                 <v-avatar
                   size="60"
