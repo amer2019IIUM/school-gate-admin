@@ -11,9 +11,10 @@ import { faStoreAlt } from '@fortawesome/free-solid-svg-icons'
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faArchway } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserGraduate, faHome, faChalkboardTeacher, faStoreAlt, faDoorOpen, faArchway, faSchool, faBuilding)
+library.add(faSearch, faUserGraduate, faHome, faChalkboardTeacher, faStoreAlt, faDoorOpen, faArchway, faSchool, faBuilding)
 
 
 Vue.config.productionTip = false

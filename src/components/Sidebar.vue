@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     v-model="isSelectedChild"
-    color="teal lighten-4"
+    style="background-color:#DFF1EF"
     right
     app
   >
