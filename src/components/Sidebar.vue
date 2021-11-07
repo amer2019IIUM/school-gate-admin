@@ -18,6 +18,7 @@
         <router-link
           style="text-decoration: none; color: inherit;"
           :to="{ name: route }"
+          v-if="text != 'المعلمين' && text != 'الطلاب'"
         >
           <v-list-item-icon>
             <font-awesome-icon :icon="icon" style="color:teal">
@@ -26,6 +27,100 @@
 
           <span style="color:teal"> {{ text }} </span>
         </router-link>
+        <div v-if="text == 'الطلاب'">
+          <v-list>
+            <v-list-group color="teal">
+              <template v-slot:activator>
+                <v-list-item-title color="teal">
+                  <span class="pl-4" style="color:teal !important">
+                    الطلاب
+                  </span>
+                </v-list-item-title>
+              </template>
+              <font-awesome-icon
+                slot="prependIcon"
+                :icon="icon"
+                style="color:teal"
+              >
+              </font-awesome-icon>
+              <v-list-group :value="true" no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">إدارة الطلاب</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+
+              <v-list-group no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">التسليمات</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+            </v-list-group>
+          </v-list>
+        </div>
+        <div v-if="text == 'المعلمين'">
+          <v-list>
+            <v-list-group color="teal">
+              <template v-slot:activator>
+                <v-list-item-title color="teal">
+                  <span style="color:teal !important">المعلمين</span>
+                </v-list-item-title>
+              </template>
+              <font-awesome-icon
+                slot="prependIcon"
+                :icon="icon"
+                style="color:teal"
+              >
+              </font-awesome-icon>
+              <v-list-group :value="true" no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">إدارة المعلمين</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+
+              <v-list-group no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">التكليفات</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+            </v-list-group>
+          </v-list>
+        </div>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
