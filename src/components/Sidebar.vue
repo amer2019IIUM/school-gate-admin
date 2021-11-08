@@ -18,7 +18,7 @@
         <router-link
           style="text-decoration: none; color: inherit;"
           :to="{ name: route }"
-          v-if="text != 'المعلمين' && text != 'الطلاب'"
+          v-if="text != 'المعلمين' && text != 'الطلاب' && text != 'الادارة'"
         >
           <v-list-item-icon>
             <font-awesome-icon :icon="icon" style="color:teal">
@@ -27,6 +27,54 @@
 
           <span style="color:teal"> {{ text }} </span>
         </router-link>
+        <div v-if="text == 'الادارة'">
+          <v-list>
+            <v-list-group color="teal">
+              <template v-slot:activator>
+                <v-list-item-title color="teal">
+                  <span class="pl-4" style="color:teal !important">
+                    الادارة
+                  </span>
+                </v-list-item-title>
+              </template>
+              <font-awesome-icon
+                slot="prependIcon"
+                :icon="icon"
+                style="color:teal"
+              >
+              </font-awesome-icon>
+              <v-list-group :value="true" no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">الاستفسارات</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+
+              <v-list-group no-action sub-group prepend-icon=" ">
+                <template v-slot:activator>
+                  <v-list-item-content>
+                    <v-list-item-title>
+                      <router-link
+                        style="text-decoration: none; color: inherit;"
+                        :to="{ name: route }"
+                      >
+                        <btn style="color:teal">الاقسام الادارية</btn>
+                      </router-link>
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </v-list-group>
+            </v-list-group>
+          </v-list>
+        </div>
         <div v-if="text == 'الطلاب'">
           <v-list>
             <v-list-group color="teal">
@@ -135,6 +183,7 @@ export default {
       isSelectedChild: this.$props.drawer,
       links: [
         ["home", "الصفحة الرئيسية", "dashboard"],
+        ["users-cog", "الادارة", "department-page"],
         ["user-graduate", "الطلاب", "student-page"],
         ["chalkboard-teacher", "المعلمين", "teacher-page"],
         ["school", "المدارس", "school-page"],

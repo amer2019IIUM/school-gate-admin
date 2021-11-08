@@ -34,6 +34,16 @@ const routes = [
     name: 'grade-page',
     component: () => import('./../views/pages/GradePage')
   },
+  {
+    path: '/inquiries',
+    name: 'inquiry-page',
+    component: () => import('./../views/pages/admin/Inquiries')
+  },
+  {
+    path: '/departments',
+    name: 'department-page',
+    component: () => import('./../views/pages/admin/Departments')
+  },
 
 ]
 
