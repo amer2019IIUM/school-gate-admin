@@ -14,6 +14,7 @@ import { faArchway } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUsersCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { createProvider } from './vue-apollo'
 
 library.add(faSearch, faUserGraduate, faHome, faChalkboardTeacher, faStoreAlt, faDoorOpen, faArchway, faSchool, faBuilding, faUsersCog)
 
@@ -24,5 +25,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 new Vue({
   vuetify,
   router,
+  apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount('#app')
